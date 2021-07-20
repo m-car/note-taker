@@ -32,4 +32,11 @@ module.exports = function(app) {
           }); 
        
     })
+    app.delete("/api/notes/:id", (req, res) => {
+        // console.log(req)
+        const chosen = req.params.id;
+        console.log(chosen)
+        console.log("delete button pressed");
+        actions.remove(req.params.id, chosen, handleResult(res))
+      })
 }
